@@ -1,6 +1,7 @@
 {
     "transport_options": {
-        "service": "gmail",
+        "host": "smtp.gmail.com",
+        "port": 465,
         "secure": true,
         "auth": {
             "user": "mustytryst@gmail.com",
