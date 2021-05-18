@@ -1,11 +1,14 @@
 {
     "transport_options": {
         "host": "smtp.mailtrap.io",
-        "port": 465,
-        "secure": true,
+        "port": 587,
+        "secureConnection": false,
         "auth": {
             "user": "929d337011cfe3",
             "pass":"eb44a47884b02c"
+        },
+        "tls": {
+            "ciphers":"SSLv3"
         }
     }
 }
