@@ -267,7 +267,7 @@ package_ver = "v1.0";
             var message = document.getElementById('message').value;
             const f_data = { name, email, subject, message }
             $.ajax({
-                url: 'https://western-dairies.herokuapp.com/sendmail',
+                url: 'http://western-dairies.herokuapp.com/sendmail',
                 type: "POST",
                 data: f_data,
                 success: function (data) {
