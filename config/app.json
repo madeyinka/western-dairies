@@ -1,10 +1,11 @@
 {
     "transport_options": {
-        "service": "gmail",
+        "host": "smtp.mailtrap.io",
+        "port": "587",
         "secureConnection": true,
         "auth": {
-            "user":"mustytryst@gmail.com",
-            "pass":"Musty@2016"
+            "user":"929d337011cfe3",
+            "pass":"eb44a47884b02c"
         },
         "tls": {
             "ciphers":"SSLv3"
