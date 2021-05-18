@@ -1,7 +1,7 @@
 {
     "transport_options": {
         "service": "gmail",
-        "secureConnection": false,
+        "secureConnection": true,
         "auth": {
             "user":"mustytryst@gmail.com",
             "pass":"Musty@2016"
