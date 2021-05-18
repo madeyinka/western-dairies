@@ -1,0 +1,9 @@
+{
+    "transport_options": {
+        "service": "gmail",
+        "auth": {
+            "user": "mustytryst@gmail.com",
+            "pass":"Musty@2016"
+        }
+    }
+}

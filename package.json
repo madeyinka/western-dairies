@@ -1,0 +1,31 @@
+{
+  "name": "western-dairies",
+  "version": "1.0.0",
+  "description": "Western dairies website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madeyinka/western-dairies.git"
+  },
+  "author": "HubIT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/madeyinka/western-dairies/issues"
+  },
+  "homepage": "https://github.com/madeyinka/western-dairies#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.3.6",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "nodemailer": "^6.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
