@@ -5,9 +5,6 @@
         "auth": {
             "user":"mustytryst@gmail.com",
             "pass":"Musty@2016"
-        },
-        "tls": {
-            "ciphers":"SSLv3"
         }
     }
 }
