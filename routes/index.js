@@ -30,7 +30,7 @@ router.post('/sendmail', async (req, res) => {
         }
     } catch (err) {
         console.log(err)
-        return res.status(500).json({ type: 'error'})
+        return res.status(500).json({ type: err})
     }
 })
 
