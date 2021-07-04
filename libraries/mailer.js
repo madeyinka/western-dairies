@@ -14,6 +14,7 @@ const MailGun = {
         }
         _client.messages().send(mailOption, (err,response) => {
             if (err){
+                console.log(err)
                 return callback(false)
             }else {
                 return callback(true)
