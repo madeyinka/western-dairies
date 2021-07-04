@@ -267,7 +267,7 @@ package_ver = "v1.0";
             var message = document.getElementById('message').value;
             const f_data = { name, email, subject, message }
             $.ajax({
-                url: 'http://westerndairies.com.ng/sendmail',
+                url: 'http://www.westerndairies.com.ng/sendmail',
                 type: "POST",
                 data: f_data,
                 success: function (data) {
