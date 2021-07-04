@@ -5,7 +5,7 @@ const mailer = require('./../libraries/mailer')
 const { emailTemplate } = require('./../views/templates/contact')
 
 //mailer route
-router.post('/sendmail', async (req, res) => {
+router.post('/sendmail', (req, res) => {
     try {
         //get form values for mailing...
         var error = []
@@ -17,13 +17,15 @@ router.post('/sendmail', async (req, res) => {
         if (error.length == 0) {
             //Initiates email sending...
             const { name, email, subject, message } = req.body
-            await mailer.sendMail({
+            mailer.sendMail({
                 name,
                 email,
                 subject,
                 message: await emailTemplate(name, email, subject, message)
+            }, (msg) => {
+                if (msg)
+                    return res.status(200).json({ type: 'successs'})
             })
-            return res.status(200).json({ type: 'successs'})
         } else {
             return res.status(500).json({ type: 'error'})
         }
