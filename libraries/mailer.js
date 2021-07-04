@@ -1,15 +1,25 @@
-const nodemailer = require('nodemailer')
-const _config = require('./../config/app.json')
-require('dotenv').config()
 
-exports.sendMail = async (options) => {
-    //set up transporter options
-    const transporter = nodemailer.createTransport(_config.transport_options)
-    const mailOptions = {
-        from: `${options.name} <${options.email}>`,
-        to: process.env.ADMIN_EMAIL,
-        subject:`MESSAGE SUBJECT - ${options.subject}`,
-        html: options.message
+const mailgun = require('mailgun-js')
+const dotenv = require('dotenv')
+
+const MailGun = {
+
+    sendMail: function(options, callback) {
+        const _client = mailgun({ apiKey: process.env.MAILGUN_KEY, domain: process.env.MAILGUN_DOMAIN})
+        const mailOption = {
+            from: options.email,
+            to: process.env.ADMIN_EMAIL,
+            subject: options.subject,
+            html: options.message
+        }
+        _client.messages().send(mailOption, (err,response) => {
+            if (err){
+                return callback(false)
+            }else {
+                return callback(true)
+            }
+        })
     }
-    await transporter.sendMail(mailOptions)
 }
+
+module.exports = MailGun;

@@ -1,12 +1,11 @@
 const express = require('express')
 const router = express.Router()
-require('dotenv').config()
-const { sendMail } = require('./../libraries/mailer')
+const dotenv = require('dotenv').config()
+const mailer = require('./../libraries/mailer')
 const { emailTemplate } = require('./../views/templates/contact')
 
 //mailer route
 router.post('/sendmail', async (req, res) => {
-    //console.log(req.body)
     try {
         //get form values for mailing...
         var error = []
@@ -18,7 +17,7 @@ router.post('/sendmail', async (req, res) => {
         if (error.length == 0) {
             //Initiates email sending...
             const { name, email, subject, message } = req.body
-            await sendMail({
+            await mailer.sendMail({
                 name,
                 email,
                 subject,
@@ -29,8 +28,8 @@ router.post('/sendmail', async (req, res) => {
             return res.status(500).json({ type: 'error'})
         }
     } catch (err) {
-        console.log(err)
-        return res.status(500).json({ type: err})
+        //console.log(err)
+        return res.status(400).json({ type: err})
     }
 })
 
